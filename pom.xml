@@ -20,6 +20,7 @@
         <mavenCompilerVersion>3.1</mavenCompilerVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
+        <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
     </properties>
 
     <dependencies>
@@ -115,6 +116,30 @@
             </plugins>
         </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <!--
+                            Disabled for http://mule.mulesoft.org/jira/browse/MULE-1153
+                            and http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4408526
+                         -->
+                        <index>false</index>
+                        <!-- List dependencies in the MANIFEST.MF -->
+                        <manifest>
+                            <!-- Note that we do not generate a classpath into the manifest, since doing so
+                                 significnatly slows down compilations that use the jar -->
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Build-Date>${maven.build.timestamp}</Build-Date>
+                        </manifestEntries>
+                        <!-- Custom Entries -->
+                    </archive>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
