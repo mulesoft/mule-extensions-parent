@@ -17,6 +17,7 @@
         <mule.version>4.0-SNAPSHOT</mule.version>
         <mule.sdk.version>1.0.0-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.0.0-SNAPSHOT</mule.api.version>
+        <mule.extensions.maven.plugin.version>1.0.0-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mavenCompilerVersion>3.1</mavenCompilerVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
@@ -77,6 +78,12 @@
                         </compilerArgs>
                         <testCompilerArgument>-parameters</testCompilerArgument>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.mule.extensions</groupId>
+                    <artifactId>mule-extensions-maven-plugin</artifactId>
+                    <version>${mule.extensions.maven.plugin.version}</version>
+                    <extensions>true</extensions>
                 </plugin>
                 <plugin>
                     <groupId>com.mycila</groupId>
@@ -163,6 +170,11 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.mule.extensions</groupId>
+                <artifactId>mule-extensions-maven-plugin</artifactId>
+                <version>${mule.extensions.maven.plugin.version}</version>
             </plugin>
         </plugins>
     </build>
