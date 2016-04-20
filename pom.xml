@@ -38,8 +38,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.mule.modules</groupId>
-            <artifactId>mule-module-extensions-support</artifactId>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-core</artifactId>
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -47,7 +47,7 @@
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-extensions-spring-support</artifactId>
             <version>${mule.version}</version>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
@@ -161,7 +161,7 @@
                             <outputDirectory>target/classes/META-INF</outputDirectory>
                             <processors>
                                 <processor>
-                                    org.mule.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor
+                                    org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor
                                 </processor>
                             </processors>
                             <options>
