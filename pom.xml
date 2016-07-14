@@ -7,17 +7,17 @@
 
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-extensions-parent</artifactId>
-    <version>4.0-SNAPSHOT</version>
+    <version>4.0.0-M2</version>
     <packaging>pom</packaging>
 
     <name>Mule Extensions Parent POM</name>
     <description>Mule extensions that augment the core Mule functionality through the Mule Extension API</description>
 
     <properties>
-        <mule.version>4.0-SNAPSHOT</mule.version>
-        <mule.sdk.version>1.0.0-SNAPSHOT</mule.sdk.version>
-        <mule.api.version>1.0.0-SNAPSHOT</mule.api.version>
-        <mule.extensions.maven.plugin.version>1.0.0-SNAPSHOT</mule.extensions.maven.plugin.version>
+        <mule.version>4.0.0-M2</mule.version>
+        <mule.sdk.version>1.0.0-M2</mule.sdk.version>
+        <mule.api.version>1.0.0-M2</mule.api.version>
+        <mule.extensions.maven.plugin.version>1.0.0-M2</mule.extensions.maven.plugin.version>
         <mavenCompilerVersion>3.1</mavenCompilerVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
