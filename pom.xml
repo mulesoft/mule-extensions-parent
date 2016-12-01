@@ -13,6 +13,12 @@
     <name>Mule Extensions Parent POM</name>
     <description>Mule extensions that augment the core Mule functionality through the Mule Extension API</description>
 
+    <scm>
+        <connection>scm:git:git://github.com/mulesoft/mule-extensions-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:mulesoft/mule-extensions-parent.git</developerConnection>
+        <url>https://github.com/mulesoft/mule-extensions-parent</url>
+    </scm>
+
     <properties>
         <mule.version>4.0-SNAPSHOT</mule.version>
         <mule.sdk.version>1.0.0-SNAPSHOT</mule.sdk.version>
@@ -209,5 +215,63 @@
             <layout>default</layout>
         </pluginRepository>
     </pluginRepositories>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <skipGpg>false</skipGpg>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <additionalparam>${xDocLint}</additionalparam>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                    <goal>test-jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <skip>${skipGpg}</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
