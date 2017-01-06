@@ -17,6 +17,7 @@
         <mule.version>4.0-SNAPSHOT</mule.version>
         <mule.sdk.version>1.0.0-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.0.0-SNAPSHOT</mule.api.version>
+        <mule.metadata.version>1.0.0-SNAPSHOT</mule.metadata.version>
         <mule.extensions.maven.plugin.version>1.0.0-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mavenCompilerVersion>3.1</mavenCompilerVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
@@ -48,6 +49,24 @@
             <artifactId>mule-module-extensions-spring-support</artifactId>
             <version>${mule.version}</version>
             <!--TODO MULE-9717-->
+        </dependency>
+        <dependency>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-metadata-model-xml</artifactId>
+            <version>${mule.metadata.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-metadata-model-java</artifactId>
+            <version>${mule.metadata.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-metadata-model-json</artifactId>
+            <version>${mule.metadata.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
