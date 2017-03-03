@@ -33,44 +33,44 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.mule.extensions</groupId>
+            <groupId>org.mule.runtime</groupId>
             <artifactId>mule-extensions-api</artifactId>
             <version>${mule.sdk.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.mule</groupId>
+            <groupId>org.mule.runtime</groupId>
             <artifactId>mule-api</artifactId>
             <version>${mule.api.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.mule</groupId>
+            <groupId>org.mule.runtime</groupId>
             <artifactId>mule-core</artifactId>
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.mule.modules</groupId>
+            <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-extensions-spring-support</artifactId>
             <version>${mule.version}</version>
             <scope>provided</scope>
             <!--TODO MULE-9717-->
         </dependency>
         <dependency>
-            <groupId>org.mule</groupId>
+            <groupId>org.mule.runtime</groupId>
             <artifactId>mule-metadata-model-xml</artifactId>
             <version>${mule.metadata.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.mule</groupId>
+            <groupId>org.mule.runtime</groupId>
             <artifactId>mule-metadata-model-java</artifactId>
             <version>${mule.metadata.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.mule</groupId>
+            <groupId>org.mule.runtime</groupId>
             <artifactId>mule-metadata-model-json</artifactId>
             <version>${mule.metadata.version}</version>
             <scope>provided</scope>
@@ -106,7 +106,7 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.mule.extensions</groupId>
+                    <groupId>org.mule.runtime.plugins</groupId>
                     <artifactId>mule-extensions-maven-plugin</artifactId>
                     <version>${mule.extensions.maven.plugin.version}</version>
                     <extensions>true</extensions>
@@ -198,7 +198,7 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.mule.extensions</groupId>
+                <groupId>org.mule.runtime.plugins</groupId>
                 <artifactId>mule-extensions-maven-plugin</artifactId>
                 <version>${mule.extensions.maven.plugin.version}</version>
             </plugin>
