@@ -57,6 +57,8 @@
             <scope>provided</scope>
             <!--TODO MULE-9717-->
         </dependency>
+
+        <!--Metadata Dependencies-->
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-metadata-model-xml</artifactId>
@@ -75,6 +77,32 @@
             <version>${mule.metadata.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--Mule Services-->
+        <!--TODO - MULE-10837 : ArtifactClassLoaderRunner - Review dependencies to mule-module-service needed by the runner -->
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-module-service</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--TODO - MULE-11030 : Add DW plugin dependency to the test runner directly -->
+        <dependency>
+            <groupId>org.mule.services</groupId>
+            <artifactId>mule-service-weave</artifactId>
+            <version>${mule.version}</version>
+            <classifier>mule-service</classifier>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.services</groupId>
+            <artifactId>mule-service-scheduler</artifactId>
+            <version>${mule.version}</version>
+            <classifier>mule-service</classifier>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--Test Dependencies-->
         <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-functional</artifactId>
