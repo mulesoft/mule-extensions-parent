@@ -79,12 +79,14 @@
         </dependency>
 
         <!--Mule Services-->
+        <!--TODO - MULE-10837 : ArtifactClassLoaderRunner - Review dependencies to mule-module-service needed by the runner -->
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-service</artifactId>
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!--TODO - MULE-11030 : Add DW plugin dependency to the test runner directly -->
         <dependency>
             <groupId>org.mule.services</groupId>
             <artifactId>mule-service-weave</artifactId>
