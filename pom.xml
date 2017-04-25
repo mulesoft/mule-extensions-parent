@@ -210,7 +210,7 @@
                         <goals>
                             <goal>process</goal>
                         </goals>
-                        <phase>process-classes</phase>
+                        <phase>compile</phase>
                         <configuration>
                             <outputDirectory>target/classes/META-INF</outputDirectory>
                             <processors>
