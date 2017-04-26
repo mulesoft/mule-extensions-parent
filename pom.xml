@@ -29,6 +29,7 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
+        <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
     </properties>
 
     <dependencies>
@@ -214,9 +215,7 @@
                         <configuration>
                             <outputDirectory>target/classes/META-INF</outputDirectory>
                             <processors>
-                                <processor>
-                                    org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor
-                                </processor>
+                                <processor>${extensionsAnnotationProcessor}</processor>
                             </processors>
                             <options>
                                 <extension.version>${project.version}</extension.version>
