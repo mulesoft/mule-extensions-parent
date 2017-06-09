@@ -25,6 +25,7 @@ VERSION_TO_MULE_RUNTIME=$2
 # Properties with releaseVersion in the root pom.xml
 propertiesDeps=("mule.sdk.version"
                 "mule.api.version"
+                "mule.metadata.version"
                 "mule.extensions.maven.plugin.version")
 
 updatePropertiesVersion "$VERSION_TO_DEPS" pom.xml propertiesDeps[@]
