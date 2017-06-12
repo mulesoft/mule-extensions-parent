@@ -54,7 +54,7 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-extensions-spring-support</artifactId>
-            <version>4.0.0-SNAPSHOT</version>
+            <version>${mule.version}</version>
             <scope>provided</scope>
             <!--TODO MULE-9717-->
         </dependency>
