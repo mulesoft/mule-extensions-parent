@@ -7,7 +7,7 @@
 
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-modules-parent</artifactId>
-    <version>1.0.0-BETA-SNAPSHOT</version>
+    <version>4.0.0-BETA-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Mule Modules Parent POM</name>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-extensions-spring-support</artifactId>
-            <version>${mule.version}</version>
+            <version>4.0.0-SNAPSHOT</version>
             <scope>provided</scope>
             <!--TODO MULE-9717-->
         </dependency>
@@ -91,7 +91,7 @@
         <dependency>
             <groupId>org.mule.services</groupId>
             <artifactId>mule-service-weave</artifactId>
-            <version>${mule.version}</version>
+            <version>4.0.0-SNAPSHOT</version>
             <classifier>mule-service</classifier>
             <scope>provided</scope>
         </dependency>        
