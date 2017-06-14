@@ -21,10 +21,12 @@ updatePropertiesVersion() {
 
 VERSION_TO_DEPS=$1
 VERSION_TO_MULE_RUNTIME=$2
+VERSION_TO_DATAWEAVE=$3
 
 # Properties with releaseVersion in the root pom.xml
 propertiesDeps=("mule.sdk.version"
                 "mule.api.version"
+                "mule.metadata.version"
                 "mule.extensions.maven.plugin.version")
 
 updatePropertiesVersion "$VERSION_TO_DEPS" pom.xml propertiesDeps[@]
@@ -32,3 +34,7 @@ updatePropertiesVersion "$VERSION_TO_DEPS" pom.xml propertiesDeps[@]
 propertiesDeps=("mule.version")
 
 updatePropertiesVersion "$VERSION_TO_MULE_RUNTIME" pom.xml propertiesDeps[@]
+
+propertiesDeps=("mule.weave.version")
+
+updatePropertiesVersion "$VERSION_TO_DATAWEAVE" pom.xml propertiesDeps[@]
