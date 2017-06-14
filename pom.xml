@@ -21,6 +21,7 @@
 
     <properties>
         <mule.version>4.0.0-SNAPSHOT</mule.version>
+        <mule.weave.version>2.0.0-BETA-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.0.0-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.0.0-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.0.0-SNAPSHOT</mule.metadata.version>
@@ -91,10 +92,10 @@
         <dependency>
             <groupId>org.mule.services</groupId>
             <artifactId>mule-service-weave</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.weave.version}</version>
             <classifier>mule-service</classifier>
             <scope>provided</scope>
-        </dependency>        
+        </dependency>
 
         <!--Test Dependencies-->
         <dependency>
@@ -254,6 +255,20 @@
             <layout>default</layout>
         </pluginRepository>
     </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>mule-releases</id>
+            <name>Mule Release Repository</name>
+            <url>https://repository-master.mulesoft.org/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>mule-snapshots</id>
+            <name>Mule Snapshot Repository</name>
+            <url>https://repository-master.mulesoft.org/nexus/content/repositories/snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 
     <profiles>
         <profile>
