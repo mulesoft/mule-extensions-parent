@@ -21,7 +21,7 @@
 
     <properties>
         <mule.version>4.0.0-BETA.x-SNAPSHOT</mule.version>
-        <mule.weave.version>2.0.0-BETA.2</mule.weave.version>
+        <mule.weave.version>2.0.0-BETA.3-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.0.0-BETA.x-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.0.0-BETA.x-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.0.0-BETA.x-SNAPSHOT</mule.metadata.version>
