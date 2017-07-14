@@ -12,6 +12,97 @@
 
     <name>Mule Modules Parent POM</name>
     <description>Mule modules that augment the core Mule functionality through the Mule Extension API</description>
+    <url>https://github.com/mulesoft/mule-extensions-parent</url>
+
+    <organization>
+        <name>MuleSoft, Inc.</name>
+        <url>http://www.mulesoft.com</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>CPAL v1.0</name>
+            <url>http://www.mulesoft.com/CPAL</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>canoasan</id>
+            <name>Matias Baldini</name>
+            <email>matias.baldini@mulesoft.com</email>
+            <roles>
+                <role>Project Manager</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>afelisatti</id>
+            <name>Ana Felisatti</name>
+        </developer>
+        <developer>
+            <id>aiannucci</id>
+            <name>Alejandro Iannucci</name>
+        </developer>
+        <developer>
+            <id>alegmarra</id>
+            <name>Alejandro Garcia Marra</name>
+        </developer>
+        <developer>
+            <id>alepulver</id>
+            <name>Alejandro Pulver</name>
+        </developer>
+        <developer>
+            <id>anosenzo</id>
+            <name>Alejandro Nosenzo</name>
+        </developer>
+        <developer>
+            <id>dfeist</id>
+            <name>Daniel Feist</name>
+        </developer>
+        <developer>
+            <id>elrodro83</id>
+            <name>Rodrigo Merino</name>
+        </developer>
+        <developer>
+            <id>estebanwasinger</id>
+            <name>Esteban Wasinger</name>
+        </developer>
+        <developer>
+            <id>fernandezlautaro</id>
+            <name>Lautaro Fernandez</name>
+        </developer>
+        <developer>
+            <id>fsgonz</id>
+            <name>Fabian Gonzalez</name>
+        </developer>
+        <developer>
+            <id>gsfernandes</id>
+            <name>Guillermo Fernandes</name>
+        </developer>
+        <developer>
+            <id>juandesi</id>
+            <name>Juan Desimoni</name>
+        </developer>
+        <developer>
+            <id>marianogonzalez</id>
+            <name>Mariano Gonzalez</name>
+        </developer>
+        <developer>
+            <id>mbuchwald</id>
+            <name>Martin Buchwald</name>
+        </developer>
+        <developer>
+            <id>lucianoRM</id>
+            <name>Luciano Raineri</name>
+        </developer>
+        <developer>
+            <id>pablolagreca</id>
+            <name>Pablo La Greca</name>
+        </developer>
+        <developer>
+            <id>pablokraan</id>
+            <name>Pablo Kraan</name>
+        </developer>
+    </developers>
 
     <scm>
         <connection>scm:git:git://github.com/mulesoft/mule-extensions-parent.git</connection>
