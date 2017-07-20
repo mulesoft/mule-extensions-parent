@@ -26,6 +26,8 @@
         <mule.api.version>1.0.0-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.0.0-SNAPSHOT</mule.metadata.version>
         <mule.extensions.maven.plugin.version>1.0.0-SNAPSHOT</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.0.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
+        
         <mavenCompilerVersion>3.1</mavenCompilerVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>

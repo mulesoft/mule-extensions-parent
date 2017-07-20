@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -o nounset
+
 updatePropertiesVersion() {
   VERSION_TO_PROPERTY="$1"
   POM_PROPERTY_PATH="$2"
@@ -27,7 +29,8 @@ VERSION_TO_DATAWEAVE=$3
 propertiesDeps=("mule.sdk.version"
                 "mule.api.version"
                 "mule.metadata.version"
-                "mule.extensions.maven.plugin.version")
+                "mule.extensions.maven.plugin.version"
+                "mule.app.plugins.maven.plugin.version")
 
 updatePropertiesVersion "$VERSION_TO_DEPS" pom.xml propertiesDeps[@]
 
