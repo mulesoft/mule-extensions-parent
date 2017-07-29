@@ -106,6 +106,12 @@
             <version>${mule.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mule.tests</groupId>
+            <artifactId>mule-tests-unit</artifactId>
+            <version>${mule.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
