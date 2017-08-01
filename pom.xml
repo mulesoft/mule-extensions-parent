@@ -33,6 +33,7 @@
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
         <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
+        <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
     </properties>
 
     <dependencies>
@@ -238,6 +239,13 @@
                         </configuration>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>commons-collections</groupId>
+                        <artifactId>commons-collections</artifactId>
+                        <version>${commonsCollectionsVersion}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.mule.runtime.plugins</groupId>
