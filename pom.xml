@@ -75,13 +75,13 @@
     </scm>
 
     <properties>
-        <mule.version>4.0.0-BETA.x-SNAPSHOT</mule.version>
+        <mule.version>4.0.0-BETA.6</mule.version>
         <mule.weave.version>2.0.0-BETA.4</mule.weave.version>
-        <mule.sdk.version>1.0.0-BETA.x-SNAPSHOT</mule.sdk.version>
-        <mule.api.version>1.0.0-BETA.x-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.0.0-BETA.x-SNAPSHOT</mule.metadata.version>
-        <mule.extensions.maven.plugin.version>1.0.0-BETA.x-SNAPSHOT</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.0.0-BETA.x-SNAPSHOT</mule.app.plugins.maven.plugin.version>
+        <mule.sdk.version>1.0.0-BETA.6</mule.sdk.version>
+        <mule.api.version>1.0.0-BETA.6</mule.api.version>
+        <mule.metadata.version>1.0.0-BETA.6</mule.metadata.version>
+        <mule.extensions.maven.plugin.version>1.0.0-BETA.6</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.0.0-BETA.6</mule.app.plugins.maven.plugin.version>
         
         <mavenCompilerVersion>3.1</mavenCompilerVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
