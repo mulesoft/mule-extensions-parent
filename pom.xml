@@ -21,7 +21,7 @@
 
     <properties>
         <mule.version>4.0.0-rc.darkseid</mule.version>
-        <mule.weave.version>2.0.0-rc.darkseid</mule.weave.version>
+        <mule.weave.version>2.0.0-rc-darkseid</mule.weave.version>
         <mule.sdk.version>1.0.0-rc.darkseid</mule.sdk.version>
         <mule.api.version>1.0.0-rc.darkseid</mule.api.version>
         <mule.metadata.version>1.0.0-rc.darkseid</mule.metadata.version>
