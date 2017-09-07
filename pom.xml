@@ -21,7 +21,7 @@
 
     <properties>
         <mule.version>4.0.0-rc-SNAPSHOT</mule.version>
-        <mule.weave.version>2.0.0-SNAPSHOT</mule.weave.version>
+        <mule.weave.version>2.0.0-rc-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.0.0-rc-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.0.0-rc-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.0.0-rc-SNAPSHOT</mule.metadata.version>
