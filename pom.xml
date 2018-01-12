@@ -35,7 +35,6 @@
     </scm>
 
     <properties>
-        <apt.version>1.0.0-SNAPSHOT</apt.version>
         <mule.version>4.1.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.1.0-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.1.0-SNAPSHOT</mule.sdk.version>
@@ -43,14 +42,12 @@
         <mule.metadata.version>1.1.0-SNAPSHOT</mule.metadata.version>
         <mule.extensions.maven.plugin.version>1.1.0-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.1.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
-
+        
         <mavenCompilerVersion>3.7.0</mavenCompilerVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
-        <extensionsAnnotationProcessor>
-            org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
-        </extensionsAnnotationProcessor>
+        <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
 
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
@@ -246,7 +243,7 @@
                         <goals>
                             <goal>process</goal>
                         </goals>
-                        <phase>process-sources</phase>
+                        <phase>compile</phase>
                         <configuration>
                             <outputDirectory>target/classes/META-INF</outputDirectory>
                             <processors>
@@ -263,11 +260,6 @@
                         <groupId>commons-collections</groupId>
                         <artifactId>commons-collections</artifactId>
                         <version>${commonsCollectionsVersion}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.mule.runtime</groupId>
-                        <artifactId>mule-extension-ast-loader</artifactId>
-                        <version>${apt.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
