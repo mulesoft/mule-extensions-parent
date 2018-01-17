@@ -35,7 +35,7 @@
     </scm>
 
     <properties>
-        <mule.version>4.1.0-SNAPSHOT</mule.version>
+        <mule.version>4.2.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.1.0-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.2.0-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.2.0-SNAPSHOT</mule.api.version>
