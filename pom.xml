@@ -84,6 +84,13 @@
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!--This is not required to work with Maven, but IntelliJ doesn't find the APT if not defined here-->
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-extension-ast-loader</artifactId>
+            <version>${mule.extensions.ast.loader.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!--Metadata Dependencies-->
         <dependency>
