@@ -49,6 +49,8 @@
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
         <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
+        <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
+        <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
 
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
     </properties>
@@ -245,6 +247,10 @@
                         </goals>
                         <phase>compile</phase>
                         <configuration>
+                            <systemProperties>
+                                <exportedPackagesValidator.skip>${exportedPackagesValidator.skip}</exportedPackagesValidator.skip>
+                                <exportedPackagesValidator.strictValidation>${exportedPackagesValidator.strictValidation}</exportedPackagesValidator.strictValidation>
+                            </systemProperties>
                             <outputDirectory>target/classes/META-INF</outputDirectory>
                             <processors>
                                 <processor>${extensionsAnnotationProcessor}</processor>
