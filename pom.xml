@@ -269,6 +269,9 @@
                             <options>
                                 <extension.version>${project.version}</extension.version>
                             </options>
+                            <additionalSourceDirectories>
+                                ${project.build.directory}/generated-sources/
+                            </additionalSourceDirectories>
                         </configuration>
                     </execution>
                 </executions>
