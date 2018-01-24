@@ -270,7 +270,9 @@
                                 <extension.version>${project.version}</extension.version>
                             </options>
                             <additionalSourceDirectories>
-                                ${project.build.directory}/generated-sources/
+                                <additionalSourceDirectory>
+                                    ${project.build.directory}/generated-sources/
+                                </additionalSourceDirectory>
                             </additionalSourceDirectories>
                         </configuration>
                     </execution>
