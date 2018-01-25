@@ -41,7 +41,7 @@
         <mule.sdk.version>1.1.1-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.1.1-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.1.0-SNAPSHOT</mule.metadata.version>
-        <mule.extensions.ast.loader.version>1.0.0-SNAPSHOT</mule.extensions.ast.loader.version>
+        <mule.extensions.ast.loader.version>1.0.1-SNAPSHOT</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.1.1-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.1.1-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
