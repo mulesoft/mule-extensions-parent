@@ -321,7 +321,7 @@
                     <executions>
                         <execution>
                             <id>munit-extension-test</id>
-                            <phase>package</phase>
+                            <phase>integration-test</phase>
                             <goals>
                                 <goal>test</goal>
                             </goals>
@@ -453,7 +453,6 @@
         <profile>
             <id>munit-tests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
                 <property>
                     <name>!skipMunitTests</name>
                 </property>
