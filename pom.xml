@@ -133,7 +133,7 @@
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
 
         <munit.input.directory>src/test/munit</munit.input.directory>
-        <munit.output.directory>${basedir}/target/munit</munit.output.directory>
+        <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
         <munit.extensions.maven.plugin.version>1.0.0-SNAPSHOT</munit.extensions.maven.plugin.version>
     </properties>
 
