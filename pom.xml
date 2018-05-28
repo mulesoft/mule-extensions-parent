@@ -234,22 +234,6 @@
             <version>${mule.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- MUnit Dependencies -->
-        <dependency>
-            <groupId>com.mulesoft.munit</groupId>
-            <artifactId>munit-runner</artifactId>
-            <version>${munit.version}</version>
-            <classifier>mule-plugin</classifier>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.mulesoft.munit</groupId>
-            <artifactId>munit-tools</artifactId>
-            <version>${munit.version}</version>
-            <classifier>mule-plugin</classifier>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -335,6 +319,21 @@
                     <groupId>com.mulesoft.munit</groupId>
                     <artifactId>munit-extensions-maven-plugin</artifactId>
                     <version>${munit.extensions.maven.plugin.version}</version>
+                    <dependencies>
+                        <!-- MUnit Dependencies -->
+                        <dependency>
+                            <groupId>com.mulesoft.munit</groupId>
+                            <artifactId>munit-runner</artifactId>
+                            <version>${munit.version}</version>
+                            <classifier>mule-plugin</classifier>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.mulesoft.munit</groupId>
+                            <artifactId>munit-tools</artifactId>
+                            <version>${munit.version}</version>
+                            <classifier>mule-plugin</classifier>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
