@@ -126,6 +126,7 @@
         <extensionsAnnotationProcessor>
             org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
+        <surefire.version>2.12.4</surefire.version>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
@@ -136,6 +137,8 @@
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
         <munit.extensions.maven.plugin.version>1.0.0-SNAPSHOT</munit.extensions.maven.plugin.version>
         <munit.version>2.2.0-SNAPSHOT</munit.version>
+
+        <skipJavaTests>${skipTests}</skipJavaTests>
     </properties>
 
     <dependencies>
@@ -239,6 +242,14 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${surefire.version}</version>
+                    <configuration>
+                        <skipTests>${skipJavaTests}</skipTests>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
