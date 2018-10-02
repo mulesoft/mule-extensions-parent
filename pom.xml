@@ -117,28 +117,34 @@
         <mule.extensions.maven.plugin.version>1.2.0-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.2.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
-        <mavenCompilerVersion>3.7.0</mavenCompilerVersion>
-        <mavenResourcesVersion>3.0.2</mavenResourcesVersion>
-
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
         <extensionsAnnotationProcessor>
             org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
-        <surefire.version>2.12.4</surefire.version>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
-
-        <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
-
+        
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
         <munit.extensions.maven.plugin.version>1.0.0-SNAPSHOT</munit.extensions.maven.plugin.version>
         <munit.version>2.2.0-SNAPSHOT</munit.version>
 
         <skipJavaTests>${skipTests}</skipJavaTests>
+
+        <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
+        <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
+        <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
+        <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+        <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
+        <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
+        <maven.site.plugin.version>3.6.1</maven.site.plugin.version>
+        <maven.javadoc.plugin.version>3.0.1</maven.javadoc.plugin.version>
+
+        <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
     </properties>
 
     <dependencies>
@@ -245,7 +251,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire.version}</version>
+                    <version>${maven.surefire.plugin.version}</version>
                     <configuration>
                         <skipTests>${skipJavaTests}</skipTests>
                     </configuration>
@@ -306,7 +312,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>${mavenResourcesVersion}</version>
+                    <version>${maven.resources.plugin.version}</version>
                     <executions>
                         <execution>
                             <id>copy-munit-resources</id>
@@ -375,10 +381,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
                 <version>2.2.4</version>
@@ -426,6 +428,48 @@
                 <groupId>org.mule.runtime.plugins</groupId>
                 <artifactId>mule-extensions-maven-plugin</artifactId>
                 <version>${mule.extensions.maven.plugin.version}</version>
+            </plugin>
+
+            <!-- Maven Plugins -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven.clean.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven.source.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven.resources.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven.install.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven.deploy.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven.site.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven.javadoc.plugin.version}</version>
             </plugin>
         </plugins>
     </build>
