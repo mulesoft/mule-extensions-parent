@@ -598,6 +598,18 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>skip-ast</id>
+            <activation>
+                <property>
+                    <name>skipAst</name>
+                </property>
+            </activation>
+            <properties>
+                <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
+                <apt.phase>compile</apt.phase>
+            </properties>
+        </profile>
     </profiles>
 
 </project>
