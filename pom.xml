@@ -108,6 +108,7 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
+<<<<<<< HEAD
         <mule.version>4.1.4-SNAPSHOT</mule.version>
         <mule.weave.version>2.1.6-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.1.4-SNAPSHOT</mule.sdk.version>
@@ -117,6 +118,17 @@
         <mule.extensions.maven.plugin.version>1.1.4-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.1.4-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
+=======
+        <mule.version>4.2.0-SNAPSHOT</mule.version>
+        <mule.weave.version>2.2.0-SNAPSHOT</mule.weave.version>
+        <mule.sdk.version>1.2.0-SNAPSHOT</mule.sdk.version>
+        <mule.api.version>1.2.0-SNAPSHOT</mule.api.version>
+        <mule.metadata.version>1.2.0-SNAPSHOT</mule.metadata.version>
+        <mule.extensions.ast.loader.version>1.1.0-SNAPSHOT</mule.extensions.ast.loader.version>
+        <mule.extensions.maven.plugin.version>1.2.0-SNAPSHOT</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.2.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
+        
+>>>>>>> d2a3a2a... MULE-16005: Add Java EE dependencies (#73)
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
@@ -124,6 +136,8 @@
             org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
+        <java.xml.bind.version>2.3.0-MULE-001</java.xml.bind.version>
+        <javax.activation.version>1.1.1</javax.activation.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
         
@@ -422,6 +436,16 @@
                         <groupId>org.mule.runtime</groupId>
                         <artifactId>mule-extension-ast-loader</artifactId>
                         <version>${mule.extensions.ast.loader.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mule.glassfish.jaxb</groupId>
+                        <artifactId>jaxb-runtime</artifactId>
+                        <version>${java.xml.bind.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                        <version>${javax.activation.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
