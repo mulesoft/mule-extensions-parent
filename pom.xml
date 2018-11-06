@@ -124,6 +124,8 @@
             org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
+        <java.xml.bind.version>2.3.0-MULE-001</java.xml.bind.version>
+        <javax.activation.version>1.1.1</javax.activation.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
         
@@ -404,6 +406,16 @@
                         <groupId>org.mule.runtime</groupId>
                         <artifactId>mule-extension-ast-loader</artifactId>
                         <version>${mule.extensions.ast.loader.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mule.glassfish.jaxb</groupId>
+                        <artifactId>jaxb-runtime</artifactId>
+                        <version>${java.xml.bind.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                        <version>${javax.activation.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
