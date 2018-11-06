@@ -108,7 +108,6 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
-<<<<<<< HEAD
         <mule.version>4.1.4-SNAPSHOT</mule.version>
         <mule.weave.version>2.1.6-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.1.4-SNAPSHOT</mule.sdk.version>
@@ -118,17 +117,6 @@
         <mule.extensions.maven.plugin.version>1.1.4-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.1.4-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
-=======
-        <mule.version>4.2.0-SNAPSHOT</mule.version>
-        <mule.weave.version>2.2.0-SNAPSHOT</mule.weave.version>
-        <mule.sdk.version>1.2.0-SNAPSHOT</mule.sdk.version>
-        <mule.api.version>1.2.0-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.2.0-SNAPSHOT</mule.metadata.version>
-        <mule.extensions.ast.loader.version>1.1.0-SNAPSHOT</mule.extensions.ast.loader.version>
-        <mule.extensions.maven.plugin.version>1.2.0-SNAPSHOT</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.2.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
-        
->>>>>>> d2a3a2a... MULE-16005: Add Java EE dependencies (#73)
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
