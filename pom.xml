@@ -114,8 +114,8 @@
         <mule.api.version>1.1.4-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.1.5-SNAPSHOT</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.0.2-SNAPSHOT</mule.extensions.ast.loader.version>
-        <mule.extensions.maven.plugin.version>1.1.4-SNAPSHOT</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.1.4-SNAPSHOT</mule.app.plugins.maven.plugin.version>
+        <mule.extensions.maven.plugin.version>1.1.2-SNAPSHOT</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.1.2-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
@@ -128,10 +128,6 @@
         <javax.activation.version>1.1.1</javax.activation.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
-        
-        <munit.input.directory>src/test/munit</munit.input.directory>
-        <munit.output.directory>${basedir}/target/munit</munit.output.directory>
-        <munit.extensions.maven.plugin.version>1.0.0-SNAPSHOT</munit.extensions.maven.plugin.version>
 
         <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
         <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
@@ -144,6 +140,7 @@
 
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+
     </properties>
 
     <dependencies>
@@ -300,42 +297,6 @@
                             <include>**/*.java</include>
                         </includes>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>${maven.resources.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>copy-munit-resources</id>
-                            <phase>process-test-resources</phase>
-                            <goals>
-                                <goal>copy-resources</goal>
-                            </goals>
-                            <configuration>
-                                <outputDirectory>${munit.output.directory}</outputDirectory>
-                                <resources>
-                                    <resource>
-                                        <directory>${munit.input.directory}</directory>
-                                        <filtering>true</filtering>
-                                    </resource>
-                                </resources>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>com.mulesoft.munit</groupId>
-                    <artifactId>munit-extensions-maven-plugin</artifactId>
-                    <version>${munit.extensions.maven.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>munit-extension-test</id>
-                            <phase>integration-test</phase>
-                            <goals>
-                                <goal>test</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
