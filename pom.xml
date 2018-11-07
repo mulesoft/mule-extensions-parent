@@ -325,6 +325,15 @@
                     <groupId>com.mulesoft.munit</groupId>
                     <artifactId>munit-extensions-maven-plugin</artifactId>
                     <version>${munit.extensions.maven.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>munit-extension-test</id>
+                            <phase>integration-test</phase>
+                            <goals>
+                                <goal>test</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -444,7 +453,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven.javadoc.plugin.version}</version>
-            </plugin>
         </plugins>
     </build>
 
