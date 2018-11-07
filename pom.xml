@@ -247,7 +247,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${mavenCompilerVersion}</version>
+                    <version>${maven.compiler.plugin.version}</version>
                     <configuration>
                         <encoding>ISO-8859-1</encoding>
                         <fork>true</fork>
@@ -426,6 +426,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven.javadoc.plugin.version}</version>
+            </plugin>
         </plugins>
     </build>
 
