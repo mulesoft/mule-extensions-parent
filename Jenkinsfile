@@ -1,0 +1,3 @@
+Map pipelineParams = [ : ]
+
+runtimeProjectsBuild(pipelineParams)
