@@ -118,7 +118,7 @@
         <mule.app.plugins.maven.plugin.version>1.2.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
         <guava.version>25.1-jre</guava.version>
-        <cglib.version>3.2.9</cglib.version>
+        <cglib.version>3.2.10</cglib.version>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
