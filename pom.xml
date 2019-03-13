@@ -223,6 +223,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Java 11 Support-->
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-module-javaee</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!--Test Dependencies-->
         <dependency>
             <groupId>org.mule.tests.plugin</groupId>
