@@ -433,7 +433,7 @@
                         <artifactId>jaxb-runtime</artifactId>
                         <version>${java.xml.bind.version}</version>
                     </dependency>
-=                    <dependency>
+                    <dependency>
                         <groupId>com.sun.activation</groupId>
                         <artifactId>jakarta.activation</artifactId>
                         <version>${javax.activation.version}</version>
