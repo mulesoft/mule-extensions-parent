@@ -128,7 +128,7 @@
         </extensionsAnnotationProcessor>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
         <java.xml.bind.version>2.3.1-MULE-001</java.xml.bind.version>
-        <javax.activation.version>1.1.1</javax.activation.version>
+        <javax.activation.version>1.2.0</javax.activation.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
         
@@ -442,8 +442,8 @@
                         <version>${java.xml.bind.version}</version>
                     </dependency>
                     <dependency>
-                        <groupId>javax.activation</groupId>
-                        <artifactId>activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
                         <version>${javax.activation.version}</version>
                     </dependency>
                     <dependency>
