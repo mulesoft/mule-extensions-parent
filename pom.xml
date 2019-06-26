@@ -126,6 +126,7 @@
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
         <java.xml.bind.version>2.3.0-MULE-001</java.xml.bind.version>
         <javax.activation.version>1.2.1</javax.activation.version>
+        <jakarta.mail.version>1.6.3</jakarta.mail.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
 
@@ -211,6 +212,18 @@
             <version>${mule.weave.version}</version>
             <classifier>mule-service</classifier>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.mail</groupId>
+                    <artifactId>mail</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>  
+            <groupId>com.sun.mail</groupId>
+            <artifactId>jakarta.mail</artifactId>
+            <version>${jakarta.mail.version}</version>
         </dependency>
 
         <!--Test Dependencies-->
