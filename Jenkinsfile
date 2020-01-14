@@ -1,3 +1,3 @@
-Map pipelineParams = [ : ]
+Map pipelineParams = [ "projectType" : "Runtime" ]
 
-runtimeProjectsBuild(pipelineParams)
+runtimeBuild(pipelineParams)
