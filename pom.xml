@@ -108,14 +108,14 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
-        <mule.version>4.1.7-SNAPSHOT</mule.version>
-        <mule.weave.version>2.1.9</mule.weave.version>
-        <mule.sdk.version>1.1.8-SNAPSHOT</mule.sdk.version>
-        <mule.api.version>1.1.7-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.1.8-SNAPSHOT</mule.metadata.version>
-        <mule.extensions.ast.loader.version>1.0.4-SNAPSHOT</mule.extensions.ast.loader.version>
-        <mule.extensions.maven.plugin.version>1.1.8-SNAPSHOT</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.1.4-SNAPSHOT</mule.app.plugins.maven.plugin.version>
+        <mule.version>4.1.1</mule.version>
+        <mule.weave.version>2.1.2</mule.weave.version>
+        <mule.sdk.version>1.1.5</mule.sdk.version>
+        <mule.api.version>1.1.1</mule.api.version>
+        <mule.metadata.version>1.1.1</mule.metadata.version>
+        <mule.extensions.ast.loader.version>1.0.1</mule.extensions.ast.loader.version>
+        <mule.extensions.maven.plugin.version>1.1.6</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.1.1</mule.app.plugins.maven.plugin.version>
 
         <guava.version>25.1-jre</guava.version>
         <cglib.version>3.2.9</cglib.version>
@@ -129,7 +129,6 @@
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
         <java.xml.bind.version>2.3.0-MULE-001</java.xml.bind.version>
         <javax.activation.version>1.2.1</javax.activation.version>
-        <jakarta.mail.version>1.6.3</jakarta.mail.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
 
@@ -228,12 +227,6 @@
                     <artifactId>mail</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-
-        <dependency>  
-            <groupId>com.sun.mail</groupId>
-            <artifactId>jakarta.mail</artifactId>
-            <version>${jakarta.mail.version}</version>
         </dependency>
 
         <!--Test Dependencies-->
