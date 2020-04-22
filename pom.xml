@@ -222,6 +222,12 @@
             <classifier>mule-service</classifier>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-dwb-api</artifactId>
+            <version>${mule.weave.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- Java 11 Support-->
         <dependency>
