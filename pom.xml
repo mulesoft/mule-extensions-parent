@@ -108,14 +108,14 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
-        <mule.version>4.2.0</mule.version>
-        <mule.weave.version>2.2.0</mule.weave.version>
-        <mule.sdk.version>1.2.0</mule.sdk.version>
-        <mule.api.version>1.2.0</mule.api.version>
-        <mule.metadata.version>1.2.0</mule.metadata.version>
-        <mule.extensions.ast.loader.version>1.1.0</mule.extensions.ast.loader.version>
-        <mule.extensions.maven.plugin.version>1.2.0</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.2.0</mule.app.plugins.maven.plugin.version>
+        <mule.version>4.2.3-SNAPSHOT</mule.version>
+        <mule.weave.version>2.2.3-SNAPSHOT</mule.weave.version>
+        <mule.sdk.version>1.2.3-SNAPSHOT</mule.sdk.version>
+        <mule.api.version>1.2.4-SNAPSHOT</mule.api.version>
+        <mule.metadata.version>1.2.5-SNAPSHOT</mule.metadata.version>
+        <mule.extensions.ast.loader.version>1.2.1-SNAPSHOT</mule.extensions.ast.loader.version>
+        <mule.extensions.maven.plugin.version>1.2.4</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.2.2-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
         <guava.version>25.1-jre</guava.version>
         <cglib.version>3.2.10</cglib.version>
@@ -134,7 +134,7 @@
         
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
-        <munit.extensions.maven.plugin.version>1.0.0-BETA2</munit.extensions.maven.plugin.version>
+        <munit.extensions.maven.plugin.version>1.0.1-SNAPSHOT</munit.extensions.maven.plugin.version>
         <munit.version>2.2.5</munit.version>
 
         <skipJavaTests>${skipTests}</skipJavaTests>
@@ -581,7 +581,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven.gpg.plugin.version}</version>
+                        <version>1.5</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
