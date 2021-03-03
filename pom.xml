@@ -142,7 +142,7 @@
         <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
         <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
         <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
-        <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
         <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
         <maven.site.plugin.version>3.8.2</maven.site.plugin.version>
@@ -276,17 +276,10 @@
                     <version>${mavenCompilerVersion}</version>
                     <configuration>
                         <encoding>ISO-8859-1</encoding>
-                        <fork>true</fork>
-                        <maxmem>512m</maxmem>
                         <source>${jdk.version}</source>
                         <target>${jdk.version}</target>
                         <proc>none</proc>
-                        <!-- Slightly faster builds, see https://jira.codehaus.org/browse/MCOMPILER-209 -->
-                        <useIncrementalCompilation>false</useIncrementalCompilation>
-                        <compilerArgs>
-                            <arg>-parameters</arg>
-                        </compilerArgs>
-                        <testCompilerArgument>-parameters</testCompilerArgument>
+                        <parameters>true</parameters>
                     </configuration>
                 </plugin>
                 <plugin>
