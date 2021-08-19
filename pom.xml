@@ -159,6 +159,12 @@
             <artifactId>mule-extensions-api</artifactId>
             <version>${mule.sdk.version}</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mule.sdk</groupId>
+                    <artifactId>mule-sdk-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
