@@ -112,6 +112,7 @@
         <mule.weave.version>2.4.0-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.4.0-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.4.0-SNAPSHOT</mule.api.version>
+        <mule.sdk.api.version>0.4.0</mule.sdk.api.version>
         <mule.metadata.version>1.4.0-SNAPSHOT</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.3.0-SNAPSHOT</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.4.0-SNAPSHOT</mule.extensions.maven.plugin.version>
@@ -159,6 +160,12 @@
             <artifactId>mule-extensions-api</artifactId>
             <version>${mule.sdk.version}</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mule.sdk</groupId>
+                    <artifactId>mule-sdk-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
@@ -454,6 +461,11 @@
                         <groupId>cglib</groupId>
                         <artifactId>cglib</artifactId>
                         <version>${cglib.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mule.sdk</groupId>
+                        <artifactId>mule-sdk-api</artifactId>
+                        <version>${mule.sdk.api.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
