@@ -110,7 +110,7 @@
         <apt.phase>process-sources</apt.phase>
         <mule.version>4.4.0-20210906</mule.version>
         <mule.weave.version>2.4.0-SNAPSHOT</mule.weave.version>
-        <mule.sdk.version>1.4.0-20210906</mule.sdk.version>
+        <mule.sdk.version>1.4.0-SNAPSHOT</mule.sdk.version>
         <mule.api.version>1.4.0-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.4.0-20210906</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.3.0-20210906</mule.extensions.ast.loader.version>
