@@ -111,6 +111,7 @@
         <mule.version>4.5.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.4.0-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.5.0-SNAPSHOT</mule.sdk.version>
+        <mule.sdk.api.version>1.0.0-SNAPSHOT</mule.sdk.api.version>
         <mule.api.version>1.5.0-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.5.0-SNAPSHOT</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.4.0-SNAPSHOT</mule.extensions.ast.loader.version>
@@ -262,6 +263,12 @@
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-extensions-api</artifactId>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mule.sdk</groupId>
+                    <artifactId>mule-sdk-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
@@ -271,6 +278,11 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-module-spring-config</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -368,6 +380,13 @@
                     <configuration>
                         <skipTests>${skipJavaTests}</skipTests>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.mule.sdk</groupId>
+                            <artifactId>mule-sdk-api</artifactId>
+                            <version>${mule.sdk.api.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -380,12 +399,26 @@
                         <proc>none</proc>
                         <parameters>true</parameters>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.mule.sdk</groupId>
+                            <artifactId>mule-sdk-api</artifactId>
+                            <version>${mule.sdk.api.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.mule.runtime.plugins</groupId>
                     <artifactId>mule-extensions-maven-plugin</artifactId>
                     <version>${mule.extensions.maven.plugin.version}</version>
                     <extensions>true</extensions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.mule.sdk</groupId>
+                            <artifactId>mule-sdk-api</artifactId>
+                            <version>${mule.sdk.api.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>com.mycila</groupId>
