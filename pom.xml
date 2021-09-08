@@ -363,11 +363,6 @@
             <artifactId>mule-tests-unit</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.mule.runtime</groupId>
-            <artifactId>mule-module-spring-config</artifactId>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
