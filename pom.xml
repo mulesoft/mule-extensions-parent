@@ -153,36 +153,135 @@
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-extensions-api</artifactId>
+                <version>${mule.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-api</artifactId>
+                <version>${mule.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-core</artifactId>
+                <version>${mule.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-module-extensions-spring-support</artifactId>
+                <version>${mule.version}</version>
+            </dependency>
+            <!--This is not required to work with Maven, but IntelliJ doesn't find the APT if not defined here-->
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-extension-ast-loader</artifactId>
+                <version>${mule.extensions.ast.loader.version}</version>
+            </dependency>
+    
+            <!--Metadata Dependencies-->
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-metadata-model-xml</artifactId>
+                <version>${mule.metadata.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-metadata-model-java</artifactId>
+                <version>${mule.metadata.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-metadata-model-json</artifactId>
+                <version>${mule.metadata.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-module-spring-config</artifactId>
+                <version>${mule.version}</version>
+                <scope>provided</scope>
+            </dependency>
+    
+            <!--Mule Services-->
+            <!--TODO - MULE-10837 : ArtifactClassLoaderRunner - Review dependencies to mule-module-service needed by the runner -->
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-module-service</artifactId>
+                <version>${mule.version}</version>
+            </dependency>
+            <!--TODO - MULE-11030 : Add DW plugin dependency to the test runner directly -->
+            <dependency>
+                <groupId>org.mule.services</groupId>
+                <artifactId>mule-service-weave</artifactId>
+                <version>${mule.weave.version}</version>
+                <classifier>mule-service</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-dwb-api</artifactId>
+                <version>${mule.weave.version}</version>
+            </dependency>
+    
+            <!-- Java 11 Support-->
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-module-javaee</artifactId>
+                <version>${mule.version}</version>
+            </dependency>
+
+            <!--Test Dependencies-->
+            <dependency>
+                <groupId>org.mule.tests.plugin</groupId>
+                <artifactId>mule-tests-component-plugin</artifactId>
+                <version>${mule.version}</version>
+                <classifier>mule-plugin</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.tests</groupId>
+                <artifactId>mule-tests-functional</artifactId>
+                <version>${mule.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.tests</groupId>
+                <artifactId>mule-tests-runner</artifactId>
+                <version>${mule.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.tests</groupId>
+                <artifactId>mule-tests-unit</artifactId>
+                <version>${mule.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-extensions-api</artifactId>
-            <version>${mule.sdk.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-api</artifactId>
-            <version>${mule.api.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-core</artifactId>
-            <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-extensions-spring-support</artifactId>
-            <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
         <!--This is not required to work with Maven, but IntelliJ doesn't find the APT if not defined here-->
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-extension-ast-loader</artifactId>
-            <version>${mule.extensions.ast.loader.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -190,19 +289,16 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-metadata-model-xml</artifactId>
-            <version>${mule.metadata.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-metadata-model-java</artifactId>
-            <version>${mule.metadata.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-metadata-model-json</artifactId>
-            <version>${mule.metadata.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -211,21 +307,18 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-service</artifactId>
-            <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
         <!--TODO - MULE-11030 : Add DW plugin dependency to the test runner directly -->
         <dependency>
             <groupId>org.mule.services</groupId>
             <artifactId>mule-service-weave</artifactId>
-            <version>${mule.weave.version}</version>
             <classifier>mule-service</classifier>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-dwb-api</artifactId>
-            <version>${mule.weave.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -233,7 +326,6 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-javaee</artifactId>
-            <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -241,27 +333,28 @@
         <dependency>
             <groupId>org.mule.tests.plugin</groupId>
             <artifactId>mule-tests-component-plugin</artifactId>
-            <version>${mule.version}</version>
             <classifier>mule-plugin</classifier>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-functional</artifactId>
-            <version>${mule.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-runner</artifactId>
-            <version>${mule.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-unit</artifactId>
-            <version>${mule.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.runtime</groupId>
+            <artifactId>mule-module-spring-config</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
