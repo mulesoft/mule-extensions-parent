@@ -576,6 +576,11 @@
                         <artifactId>cglib</artifactId>
                         <version>${cglib.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>org.mule.sdk</groupId>
+                        <artifactId>mule-sdk-api</artifactId>
+                        <version>${mule.sdk.api.version}</version>
+                    </dependency>
                 </dependencies>
             </plugin>
             <plugin>
