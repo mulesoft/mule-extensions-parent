@@ -132,7 +132,7 @@
         <javax.activation.version>1.2.1</javax.activation.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
-        
+
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
         <munit.extensions.maven.plugin.version>1.1.1</munit.extensions.maven.plugin.version>
@@ -182,7 +182,7 @@
                 <artifactId>mule-extension-ast-loader</artifactId>
                 <version>${mule.extensions.ast.loader.version}</version>
             </dependency>
-    
+
             <!--Metadata Dependencies-->
             <dependency>
                 <groupId>org.mule.runtime</groupId>
@@ -205,7 +205,7 @@
                 <version>${mule.version}</version>
                 <scope>provided</scope>
             </dependency>
-    
+
             <!--Mule Services-->
             <!--TODO - MULE-10837 : ArtifactClassLoaderRunner - Review dependencies to mule-module-service needed by the runner -->
             <dependency>
@@ -225,7 +225,7 @@
                 <artifactId>mule-dwb-api</artifactId>
                 <version>${mule.weave.version}</version>
             </dependency>
-    
+
             <!-- Java 11 Support-->
             <dependency>
                 <groupId>org.mule.runtime</groupId>
@@ -374,6 +374,9 @@
                     <version>${maven.surefire.plugin.version}</version>
                     <configuration>
                         <skipTests>${skipJavaTests}</skipTests>
+                        <argLine>
+                            -javaagent:${settings.localRepository}/org/mule/tests/mule-tests-runner/4.5.0-SNAPSHOT/mule-tests-runner-4.5.0-SNAPSHOT.jar
+                        </argLine>
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -528,7 +531,8 @@
                         <configuration>
                             <systemProperties>
                                 <exportedPackagesValidator.skip>${exportedPackagesValidator.skip}</exportedPackagesValidator.skip>
-                                <exportedPackagesValidator.strictValidation>${exportedPackagesValidator.strictValidation}</exportedPackagesValidator.strictValidation>
+                                <exportedPackagesValidator.strictValidation>${exportedPackagesValidator.strictValidation}
+                                </exportedPackagesValidator.strictValidation>
                             </systemProperties>
                             <outputDirectory>target/classes/META-INF</outputDirectory>
                             <processors>
@@ -814,7 +818,9 @@
                 </property>
             </activation>
             <properties>
-                <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
+                <extensionsAnnotationProcessor>
+                    org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor
+                </extensionsAnnotationProcessor>
                 <apt.phase>compile</apt.phase>
             </properties>
         </profile>
