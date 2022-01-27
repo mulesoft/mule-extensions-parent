@@ -113,7 +113,7 @@
         <mule.sdk.version>1.5.0-20220125</mule.sdk.version>
         <mule.sdk.api.version>1.0.0-20220125</mule.sdk.api.version>
         <mule.api.version>1.5.0-20220125</mule.api.version>
-        <mule.metadata.version>1.5.0-SNAPSHOT</mule.metadata.version>
+        <mule.metadata.version>1.5.0-20220125</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.4.0-20220125</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.5.0-20220125</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.5.0-20220125</mule.app.plugins.maven.plugin.version>
