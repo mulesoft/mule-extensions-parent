@@ -152,6 +152,9 @@
 
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+
+        <log4jVersion>2.17.1</log4jVersion>
+        <disruptorVersion>3.4.2</disruptorVersion>
     </properties>
 
     <dependencyManagement>
@@ -254,6 +257,48 @@
                 <groupId>org.mule.tests</groupId>
                 <artifactId>mule-tests-unit</artifactId>
                 <version>${mule.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${disruptorVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4jVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4jVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4jVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-1.2-api</artifactId>
+                <version>${log4jVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-jcl</artifactId>
+                <version>${log4jVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-jul</artifactId>
+                <version>${log4jVersion}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
