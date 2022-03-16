@@ -7,7 +7,7 @@
 
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-modules-parent</artifactId>
-    <version>1.4.1-SNAPSHOT</version>
+    <version>1.4.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Mule Modules Parent POM</name>
@@ -108,18 +108,20 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
-        <mule.version>4.4.1-SNAPSHOT</mule.version>
+        <mule.version>4.4.0</mule.version>
         <mule.weave.version>2.4.0</mule.weave.version>
-        <mule.sdk.version>1.4.1-SNAPSHOT</mule.sdk.version>
+        <mule.sdk.version>1.4.0</mule.sdk.version>
         <mule.sdk.api.version>0.4.0</mule.sdk.api.version>
-        <mule.api.version>1.4.1-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.4.1-SNAPSHOT</mule.metadata.version>
-        <mule.extensions.ast.loader.version>1.3.1-SNAPSHOT</mule.extensions.ast.loader.version>
+        <mule.api.version>1.4.0</mule.api.version>
+        <mule.metadata.version>1.4.0</mule.metadata.version>
+        <mule.extensions.ast.loader.version>1.3.0</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.4.1-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.4.1-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
         <guava.version>25.1-jre</guava.version>
         <cglib.version>3.2.10</cglib.version>
+
+        <log4j2.version>2.17.1</log4j2.version>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
@@ -136,7 +138,7 @@
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
         <munit.extensions.maven.plugin.version>1.1.1</munit.extensions.maven.plugin.version>
-        <munit.version>2.4.0-SNAPSHOT</munit.version>
+        <munit.version>2.3.6</munit.version>
 
         <skipJavaTests>${skipTests}</skipJavaTests>
 
@@ -329,11 +331,49 @@
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-spring-config</artifactId>
             <scope>provided</scope>
+            <exclusions>
+                <!-- Log4j2 -->
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-slf4j-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-1.2-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-extensions-spring-support</artifactId>
             <scope>provided</scope>
+            <exclusions>
+                <!-- Log4j2 -->
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-slf4j-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-1.2-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--This is not required to work with Maven, but IntelliJ doesn't find the APT if not defined here-->
         <dependency>
@@ -407,6 +447,25 @@
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-unit</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <!-- Log4j2 -->
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-slf4j-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-1.2-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
