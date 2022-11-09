@@ -135,7 +135,7 @@
         
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
-        <munit.extensions.maven.plugin.version>1.1.1</munit.extensions.maven.plugin.version>
+        <munit.extensions.maven.plugin.version>1.1.3</munit.extensions.maven.plugin.version>
         <munit.version>2.4.0-SNAPSHOT</munit.version>
 
         <skipJavaTests>${skipTests}</skipJavaTests>
@@ -663,13 +663,13 @@
         <pluginRepository>
             <id>mulesoft-plugin-releases</id>
             <name>MuleSoft Release Repository</name>
-            <url>http://repository.mulesoft.org/releases/</url>
+            <url>https://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </pluginRepository>
         <pluginRepository>
             <id>mulesoft-plugin-snapshots</id>
             <name>MuleSoft Snapshots Repository</name>
-            <url>http://repository.mulesoft.org/snapshots/</url>
+            <url>https://repository.mulesoft.org/snapshots/</url>
             <layout>default</layout>
         </pluginRepository>
     </pluginRepositories>
