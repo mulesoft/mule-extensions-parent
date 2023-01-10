@@ -792,6 +792,7 @@
                                             <message>No Snapshots Allowed in Deps!</message>
                                             <excludes>
                                                 <exclude>org.mule.weave:*</exclude>
+                                                <exclude>org.mule.runtime:mule-dwb-api</exclude>
                                                 <exclude>org.mule.services:*</exclude>
                                                 <exclude>org.mule.tools.maven:mule-classloader-model</exclude>
                                                 <exclude>org.mule.modules:mule-module-cors-kernel</exclude>
