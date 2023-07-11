@@ -558,7 +558,7 @@
                     </dependency>
                     <dependency>
                         <groupId>com.sun.xml.bind</groupId>
-                        <artifactId>jaxb-runtime</artifactId>
+                        <artifactId>jaxb-impl</artifactId>
                         <version>${java.xml.bind.version}</version>
                     </dependency>
                     <dependency>
