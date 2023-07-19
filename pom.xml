@@ -152,6 +152,11 @@
 
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+
+        <mulesoftLicenseVersion>1.1.0</mulesoftLicenseVersion>
+        <license.maven.plugin.version>4.2</license.maven.plugin.version>
+        <licensePath>LICENSE_HEADER_80.txt</licensePath>
+        <licenseYear>2023</licenseYear>
     </properties>
 
     <dependencyManagement>
@@ -418,31 +423,34 @@
                 <plugin>
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>2.8</version>
+                    <version>${license.maven.plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.mulesoft.license</groupId>
+                            <artifactId>license</artifactId>
+                            <version>${mulesoftLicenseVersion}</version>
+                        </dependency>
+                    </dependencies>
                     <configuration>
-                        <header>LICENSE_HEADER.txt</header>
-                        <excludes>
-                            <exclude>target/**</exclude>
-                            <exclude>**/.gitignore</exclude>
-                            <exclude>**/*.txt</exclude>
-                            <exclude>**/*.groovy</exclude>
-                            <exclude>**/*.sh</exclude>
-                            <exclude>**/*.bat</exclude>
-                            <exclude>**/*.ftl</exclude>
-                            <exclude>**/*.xml</exclude>
-                            <exclude>**/*.properties</exclude>
-                            <exclude>**/*.sample</exclude>
-                            <exclude>**/*.md</exclude>
-                            <exclude>**/*.xsl</exclude>
-                            <exclude>**/*.html</exclude>
-                            <exclude>**/*.css</exclude>
-                            <exclude>**/build-number.txt</exclude>
-                            <exclude>**/*.wsdl</exclude>
-                        </excludes>
+                        <header>${licensePath}</header>
+                        <properties>
+                            <year>${licenseYear}</year>
+                        </properties>
                         <includes>
                             <include>**/*.java</include>
                         </includes>
+                        <mapping>
+                            <java>SLASHSTAR_STYLE</java>
+                        </mapping>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
