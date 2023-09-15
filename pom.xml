@@ -125,7 +125,7 @@
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
         <extensionsAnnotationProcessor>
-            org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
+            org.mule.runtime.ast.extension.api.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
         <java.xml.bind.version>2.3.8</java.xml.bind.version>
