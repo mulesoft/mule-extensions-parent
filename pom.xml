@@ -823,7 +823,7 @@
                 </property>
             </activation>
             <properties>
-                <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
+                <extensionsAnnotationProcessor>org.mule.runtime.module.extension.api.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
                 <apt.phase>compile</apt.phase>
             </properties>
         </profile>
