@@ -110,7 +110,7 @@
         <apt.phase>process-sources</apt.phase>
         <mule.version>4.5.1-SNAPSHOT</mule.version>
         <mule.weave.version>2.5.1-SNAPSHOT</mule.weave.version>
-        <mule.sdk.version>1.5.1-SNAPSHOT</mule.sdk.version>
+        <mule.sdk.version>1.5.2-SNAPSHOT</mule.sdk.version>
         <mule.sdk.api.version>0.7.2-SNAPSHOT</mule.sdk.api.version>
         <mule.api.version>1.5.2-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.5.1-SNAPSHOT</mule.metadata.version>
