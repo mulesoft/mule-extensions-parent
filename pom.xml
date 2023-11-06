@@ -7,7 +7,7 @@
 
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-modules-parent</artifactId>
-    <version>1.5.0-SNAPSHOT</version>
+    <version>1.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Mule Modules Parent POM</name>
@@ -108,15 +108,15 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
-        <mule.version>4.5.0-SNAPSHOT</mule.version>
-        <mule.weave.version>2.5.0-SNAPSHOT</mule.weave.version>
-        <mule.sdk.version>1.5.0-SNAPSHOT</mule.sdk.version>
-        <mule.sdk.api.version>0.6.1-SNAPSHOT</mule.sdk.api.version>
-        <mule.api.version>1.5.0-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.5.0-SNAPSHOT</mule.metadata.version>
-        <mule.extensions.ast.loader.version>1.4.0-SNAPSHOT</mule.extensions.ast.loader.version>
-        <mule.extensions.maven.plugin.version>1.5.0-SNAPSHOT</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.5.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
+        <mule.version>4.6.0-SNAPSHOT</mule.version>
+        <mule.weave.version>2.6.0-SNAPSHOT</mule.weave.version>
+        <mule.sdk.version>1.6.0-SNAPSHOT</mule.sdk.version>
+        <mule.sdk.api.version>0.8.0-SNAPSHOT</mule.sdk.api.version>
+        <mule.api.version>1.6.0-SNAPSHOT</mule.api.version>
+        <mule.metadata.version>1.6.0-SNAPSHOT</mule.metadata.version>
+        <mule.extensions.ast.loader.version>1.5.0-SNAPSHOT</mule.extensions.ast.loader.version>
+        <mule.extensions.maven.plugin.version>1.6.0-SNAPSHOT</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.6.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
         <guava.version>25.1-jre</guava.version>
         <cglib.version>3.2.10</cglib.version>
@@ -125,7 +125,7 @@
         <jdk.version>1.8</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
         <extensionsAnnotationProcessor>
-            org.mule.runtime.ast.internal.extension.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
+            org.mule.runtime.ast.extension.api.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
         <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
         <java.xml.bind.version>2.3.8</java.xml.bind.version>
@@ -152,6 +152,11 @@
 
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+
+        <mulesoftLicenseVersion>1.4.0</mulesoftLicenseVersion>
+        <license.maven.plugin.version>4.2</license.maven.plugin.version>
+        <licensePath>LICENSE_HEADER_CPAL.txt</licensePath>
+        <licenseYear>2023</licenseYear>
     </properties>
 
     <dependencyManagement>
@@ -418,31 +423,34 @@
                 <plugin>
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>2.8</version>
+                    <version>${license.maven.plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.mulesoft.license</groupId>
+                            <artifactId>license</artifactId>
+                            <version>${mulesoftLicenseVersion}</version>
+                        </dependency>
+                    </dependencies>
                     <configuration>
-                        <header>LICENSE_HEADER.txt</header>
-                        <excludes>
-                            <exclude>target/**</exclude>
-                            <exclude>**/.gitignore</exclude>
-                            <exclude>**/*.txt</exclude>
-                            <exclude>**/*.groovy</exclude>
-                            <exclude>**/*.sh</exclude>
-                            <exclude>**/*.bat</exclude>
-                            <exclude>**/*.ftl</exclude>
-                            <exclude>**/*.xml</exclude>
-                            <exclude>**/*.properties</exclude>
-                            <exclude>**/*.sample</exclude>
-                            <exclude>**/*.md</exclude>
-                            <exclude>**/*.xsl</exclude>
-                            <exclude>**/*.html</exclude>
-                            <exclude>**/*.css</exclude>
-                            <exclude>**/build-number.txt</exclude>
-                            <exclude>**/*.wsdl</exclude>
-                        </excludes>
+                        <header>${licensePath}</header>
+                        <properties>
+                            <year>${licenseYear}</year>
+                        </properties>
                         <includes>
                             <include>**/*.java</include>
                         </includes>
+                        <mapping>
+                            <java>SLASHSTAR_STYLE</java>
+                        </mapping>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
@@ -558,7 +566,7 @@
                     </dependency>
                     <dependency>
                         <groupId>com.sun.xml.bind</groupId>
-                        <artifactId>jaxb-runtime</artifactId>
+                        <artifactId>jaxb-impl</artifactId>
                         <version>${java.xml.bind.version}</version>
                     </dependency>
                     <dependency>
@@ -815,7 +823,7 @@
                 </property>
             </activation>
             <properties>
-                <extensionsAnnotationProcessor>org.mule.runtime.module.extension.internal.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
+                <extensionsAnnotationProcessor>org.mule.runtime.module.extension.api.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
                 <apt.phase>compile</apt.phase>
             </properties>
         </profile>
