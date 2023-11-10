@@ -112,7 +112,7 @@
         <mule.weave.version>2.5.1</mule.weave.version>
         <mule.sdk.version>1.5.1</mule.sdk.version>
         <mule.sdk.api.version>0.7.1</mule.sdk.api.version>
-        <mule.api.version>1.5.1</mule.api.version>
+        <mule.api.version>1.5.2</mule.api.version>
         <mule.metadata.version>1.5.1</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.4.1</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.5.1</mule.extensions.maven.plugin.version>
