@@ -109,7 +109,8 @@
     <properties>
         <apt.phase>process-sources</apt.phase>
         <mule.version>4.1.1</mule.version>
-        <mule.weave.version>2.1.2</mule.weave.version>
+        <mule.impl.version>4.1.6-20220221</mule.impl.version>
+        <mule.weave.version>2.1.2-20220125</mule.weave.version>
         <mule.sdk.version>1.1.5</mule.sdk.version>
         <mule.api.version>1.1.1</mule.api.version>
         <mule.metadata.version>1.1.1</mule.metadata.version>
@@ -219,13 +220,13 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-core</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.impl.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-extensions-spring-support</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.impl.version}</version>
             <scope>provided</scope>
         </dependency>
         <!--This is not required to work with Maven, but IntelliJ doesn't find the APT if not defined here-->
@@ -261,7 +262,7 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-module-service</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.impl.version}</version>
             <scope>provided</scope>
         </dependency>
         <!--TODO - MULE-11030 : Add DW plugin dependency to the test runner directly -->
@@ -283,26 +284,26 @@
         <dependency>
             <groupId>org.mule.tests.plugin</groupId>
             <artifactId>mule-tests-component-plugin</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.impl.version}</version>
             <classifier>mule-plugin</classifier>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-functional</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.impl.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-runner</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.impl.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-unit</artifactId>
-            <version>${mule.version}</version>
+            <version>${mule.impl.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
