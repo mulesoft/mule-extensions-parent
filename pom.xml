@@ -109,11 +109,12 @@
     <properties>
         <apt.phase>process-sources</apt.phase>
         <mule.version>4.4.1-SNAPSHOT</mule.version>
+        <mule.properties.api.version>1.0.1-SNAPSHOT</mule.properties.api.version>
         <mule.weave.version>2.4.0</mule.weave.version>
         <mule.sdk.version>1.4.0</mule.sdk.version>
         <mule.sdk.api.version>0.4.0</mule.sdk.api.version>
         <mule.api.version>1.4.1-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.4.0</mule.metadata.version>
+        <mule.metadata.version>1.4.1-SNAPSHOT</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.3.0</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.4.2-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.4.2-SNAPSHOT</mule.app.plugins.maven.plugin.version>
@@ -170,6 +171,11 @@
                 <groupId>org.mule.runtime</groupId>
                 <artifactId>mule-api</artifactId>
                 <version>${mule.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mule.runtime</groupId>
+                <artifactId>mule-properties-api</artifactId>
+                <version>${mule.properties.api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mule.runtime</groupId>
