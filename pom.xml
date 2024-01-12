@@ -109,11 +109,11 @@
     <properties>
         <apt.phase>process-sources</apt.phase>
         <mule.version>4.1.1</mule.version>
-        <mule.impl.version>4.1.6-HF-SNAPSHOT</mule.impl.version>
+        <mule.impl.version>4.1.6-20240112</mule.impl.version>
         <mule.weave.version>2.1.2-20220125</mule.weave.version>
-        <mule.sdk.version>1.1.8-SNAPSHOT</mule.sdk.version>
-        <mule.api.version>1.1.1-monthly-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.1.1-monthly-SNAPSHOT</mule.metadata.version>
+        <mule.sdk.version>1.1.7-20240112</mule.sdk.version>
+        <mule.api.version>1.1.1-20240112</mule.api.version>
+        <mule.metadata.version>1.1.1-20240112</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.0.1</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.1.6</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.1.1</mule.app.plugins.maven.plugin.version>
