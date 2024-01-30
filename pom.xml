@@ -111,7 +111,7 @@
         <mule.version>4.6.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.6.1-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.6.0-SNAPSHOT</mule.sdk.version>
-        <mule.sdk.api.version>0.8.0-SNAPSHOT</mule.sdk.api.version>
+        <mule.sdk.api.version>0.8.1-SNAPSHOT</mule.sdk.api.version>
         <mule.api.version>1.6.1-SNAPSHOT</mule.api.version>
         <mule.metadata.version>1.6.1-SNAPSHOT</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.5.0-SNAPSHOT</mule.extensions.ast.loader.version>
