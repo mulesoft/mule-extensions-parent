@@ -116,7 +116,7 @@
         <mule.metadata.version>1.6.1-rc5</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.5.0-rc5</mule.extensions.ast.loader.version>
         <mule.extensions.maven.plugin.version>1.6.0</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.6.0-rc5</mule.app.plugins.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.6.0</mule.app.plugins.maven.plugin.version>
 
         <guava.version>25.1-jre</guava.version>
         <cglib.version>3.2.10</cglib.version>
