@@ -838,6 +838,8 @@
             </activation>
             <build>
                 <plugins>
+                    <!-- Sets project properties with the path to each dependency. Needed to provide
+                         `org.mule.apache:xerces2-xsd11` to `maven-surefire-plugin` -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
