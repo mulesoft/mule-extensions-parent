@@ -120,6 +120,7 @@
 
         <guava.version>25.1-jre</guava.version>
         <cglib.version>3.2.10</cglib.version>
+        <xmlApisVersion>1.4.01</xmlApisVersion>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
@@ -379,6 +380,9 @@
                     <version>${maven.surefire.plugin.version}</version>
                     <configuration>
                         <skipTests>${skipJavaTests}</skipTests>
+                        <systemPropertyVariables>
+                            <maven.projectVersion>${mule.version}</maven.projectVersion>
+                        </systemPropertyVariables>
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -826,6 +830,51 @@
                 <extensionsAnnotationProcessor>org.mule.runtime.module.extension.api.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
                 <apt.phase>compile</apt.phase>
             </properties>
+        </profile>
+        <profile>
+            <id>java8</id>
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>3.5.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>properties</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven.surefire.plugin.version}</version>
+                        <configuration>
+                            <additionalClasspathElements>
+                                <!-- Add this to the classpath so it is available when running tests with jvm8 -->
+                                <!-- but it does not interfere with the module system -->
+                                <!-- (it has colliding packages with java.xml module) when running with java11+ -->
+                                <additionalClasspathElement>${org.mule.apache:xerces2-xsd11:jar:}</additionalClasspathElement>
+                            </additionalClasspathElements>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                    <version>${xmlApisVersion}</version>
+                    <!-- This is needed only for jdk8, the required classes from here -->
+                    <!-- are already available in the jdk on versions 11+ -->
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 
