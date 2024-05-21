@@ -123,7 +123,7 @@
         <xmlApisVersion>1.4.01</xmlApisVersion>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>17</jdk.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
         <extensionsAnnotationProcessor>
             org.mule.runtime.ast.extension.api.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
@@ -400,6 +400,7 @@
                         <encoding>ISO-8859-1</encoding>
                         <source>${jdk.version}</source>
                         <target>${jdk.version}</target>
+                        <release>${jdk.version}</release>
                         <proc>none</proc>
                         <parameters>true</parameters>
                     </configuration>
