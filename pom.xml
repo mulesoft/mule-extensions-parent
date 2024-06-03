@@ -108,7 +108,7 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
-        <mule.version>4.6.4-SNAPSHOT</mule.version>
+        <mule.version>4.6.5-SNAPSHOT</mule.version>
         <mule.weave.version>2.6.5-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.6.5-SNAPSHOT</mule.sdk.version>
         <mule.sdk.api.version>0.8.5-SNAPSHOT</mule.sdk.api.version>
