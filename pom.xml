@@ -412,6 +412,11 @@
                                 <artifactId>mule-module-extensions-spring-support</artifactId>
                                 <version>${mule.version}</version>
                             </path>
+					        <path>
+					            <groupId>org.mule.runtime</groupId>
+					            <artifactId>mule-module-extensions-soap-support</artifactId>
+					            <version>${mule.version}</version>
+					        </path>
                         </annotationProcessorPaths>
                         <annotationProcessors>
                             <annotationProcessors>${extensionsAnnotationProcessor}</annotationProcessors>
@@ -549,7 +554,6 @@
             <plugin>
                 <groupId>org.mule.runtime.plugins</groupId>
                 <artifactId>mule-extensions-maven-plugin</artifactId>
-                <version>${mule.extensions.maven.plugin.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.mule.runtime</groupId>
@@ -573,12 +577,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven.resources.plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
