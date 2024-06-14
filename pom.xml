@@ -125,6 +125,8 @@
         <jdk.version>1.8</jdk.version>
         <java.release.version>8</java.release.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
+        
+        <extensionsAnnotationProcessorCompileProc></extensionsAnnotationProcessorCompileProc>
         <extensionsAnnotationProcessor>
             org.mule.runtime.ast.extension.api.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
@@ -400,6 +402,7 @@
                         <source>${jdk.version}</source>
                         <target>${jdk.version}</target>
                         <release>${java.release.version}</release>
+                        <proc>${extensionsAnnotationProcessorCompileProc}</proc>
                         <parameters>true</parameters>
                         <annotationProcessorPaths>
                             <path>
@@ -412,11 +415,11 @@
                                 <artifactId>mule-module-extensions-spring-support</artifactId>
                                 <version>${mule.version}</version>
                             </path>
-					        <path>
-					            <groupId>org.mule.runtime</groupId>
-					            <artifactId>mule-module-extensions-soap-support</artifactId>
-					            <version>${mule.version}</version>
-					        </path>
+                            <path>
+                                <groupId>org.mule.runtime</groupId>
+                                <artifactId>mule-module-extensions-soap-support</artifactId>
+                                <version>${mule.version}</version>
+                            </path>
                         </annotationProcessorPaths>
                         <annotationProcessors>
                             <annotationProcessors>${extensionsAnnotationProcessor}</annotationProcessors>
@@ -424,6 +427,7 @@
                         <compilerArgs>
                             <arg>-Aextension.version=${project.version}</arg>
                             <arg>-Aextension.resources=${project.build.resources[0].directory}</arg>
+<!--                            <arg>-Aextension.classes=${project.build.outputDirectory}</arg>-->
                             <arg>-AexportedPackagesValidator.skip=${exportedPackagesValidator.skip}</arg>
                             <arg>-AexportedPackagesValidator.strictValidation=${exportedPackagesValidator.strictValidation}</arg>
                         </compilerArgs>
@@ -788,8 +792,36 @@
                 </property>
             </activation>
             <properties>
+                <!-- Prevent doing the annotation processing during compilation, because compiled classes are not available yet -->
+                <extensionsAnnotationProcessorCompileProc>none</extensionsAnnotationProcessorCompileProc>
                 <extensionsAnnotationProcessor>org.mule.runtime.module.extension.api.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
             </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <executions>
+                                <!-- Do just the annotation processing part, but with access to the compiled classes -->
+                                <execution>
+                                    <phase>compile</phase>
+                                    <id>post-compile-annotaiton-processing</id>
+                                    <goals>
+                                        <goal>compile</goal>
+                                    </goals>
+                                    <configuration>
+                                        <proc>only</proc>
+                                        <compilerArgs combine.children="append">
+                                            <arg>-Aextension.classes=${project.build.outputDirectory}</arg>
+                                        </compilerArgs>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
         </profile>
         <profile>
             <id>java8</id>
