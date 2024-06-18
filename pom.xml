@@ -107,7 +107,6 @@
     </scm>
 
     <properties>
-        <apt.phase>process-sources</apt.phase>
         <mule.version>4.8.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.8.0-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.8.0-SNAPSHOT</mule.sdk.version>
@@ -124,7 +123,10 @@
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
+        <java.release.version>8</java.release.version>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
+        
+        <extensionsAnnotationProcessorCompileProc></extensionsAnnotationProcessorCompileProc>
         <extensionsAnnotationProcessor>
             org.mule.runtime.ast.extension.api.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
@@ -154,7 +156,7 @@
         <maven.gpg.plugin.version>3.2.4</maven.gpg.plugin.version>
 
         <mulesoftLicenseVersion>1.4.0</mulesoftLicenseVersion>
-        <license.maven.plugin.version>4.2</license.maven.plugin.version>
+        <license.maven.plugin.version>4.3</license.maven.plugin.version>
         <licensePath>LICENSE_HEADER_CPAL.txt</licensePath>
         <licenseYear>2023</licenseYear>
     </properties>
@@ -394,13 +396,40 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${mavenCompilerVersion}</version>
+                    <version>${maven.compiler.plugin.version}</version>
                     <configuration>
                         <encoding>ISO-8859-1</encoding>
                         <source>${jdk.version}</source>
                         <target>${jdk.version}</target>
-                        <proc>none</proc>
+                        <release>${java.release.version}</release>
+                        <proc>${extensionsAnnotationProcessorCompileProc}</proc>
                         <parameters>true</parameters>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.mule.runtime</groupId>
+                                <artifactId>mule-extension-ast-loader</artifactId>
+                                <version>${mule.extensions.ast.loader.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.mule.runtime</groupId>
+                                <artifactId>mule-module-extensions-spring-support</artifactId>
+                                <version>${mule.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.mule.runtime</groupId>
+                                <artifactId>mule-module-extensions-soap-support</artifactId>
+                                <version>${mule.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                        <annotationProcessors>
+                            <annotationProcessors>${extensionsAnnotationProcessor}</annotationProcessors>
+                        </annotationProcessors>
+                        <compilerArgs>
+                            <arg>-Aextension.version=${project.version}</arg>
+                            <arg>-Aextension.resources=${project.build.resources[0].directory}</arg>
+                            <arg>-AexportedPackagesValidator.skip=${exportedPackagesValidator.skip}</arg>
+                            <arg>-AexportedPackagesValidator.strictValidation=${exportedPackagesValidator.strictValidation}</arg>
+                        </compilerArgs>
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -526,78 +555,8 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.bsc.maven</groupId>
-                <artifactId>maven-processor-plugin</artifactId>
-                <version>3.3.3</version>
-                <executions>
-                    <execution>
-                        <id>process</id>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                        <phase>${apt.phase}</phase>
-                        <configuration>
-                            <systemProperties>
-                                <exportedPackagesValidator.skip>${exportedPackagesValidator.skip}</exportedPackagesValidator.skip>
-                                <exportedPackagesValidator.strictValidation>${exportedPackagesValidator.strictValidation}</exportedPackagesValidator.strictValidation>
-                            </systemProperties>
-                            <outputDirectory>target/classes/META-INF</outputDirectory>
-                            <processors>
-                                <processor>${extensionsAnnotationProcessor}</processor>
-                            </processors>
-                            <options>
-                                <extension.version>${project.version}</extension.version>
-                            </options>
-                            <additionalSourceDirectories>
-                                <additionalSourceDirectory>
-                                    ${project.build.directory}/generated-sources/
-                                </additionalSourceDirectory>
-                            </additionalSourceDirectories>
-                        </configuration>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>commons-collections</groupId>
-                        <artifactId>commons-collections</artifactId>
-                        <version>${commonsCollectionsVersion}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.mule.runtime</groupId>
-                        <artifactId>mule-extension-ast-loader</artifactId>
-                        <version>${mule.extensions.ast.loader.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.sun.xml.bind</groupId>
-                        <artifactId>jaxb-impl</artifactId>
-                        <version>${java.xml.bind.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.sun.activation</groupId>
-                        <artifactId>jakarta.activation</artifactId>
-                        <version>${javax.activation.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.google.guava</groupId>
-                        <artifactId>guava</artifactId>
-                        <version>${guava.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>cglib</groupId>
-                        <artifactId>cglib</artifactId>
-                        <version>${cglib.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.mule.sdk</groupId>
-                        <artifactId>mule-sdk-api</artifactId>
-                        <version>${mule.sdk.api.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
                 <groupId>org.mule.runtime.plugins</groupId>
                 <artifactId>mule-extensions-maven-plugin</artifactId>
-                <version>${mule.extensions.maven.plugin.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.mule.runtime</groupId>
@@ -621,12 +580,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven.resources.plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -834,9 +791,36 @@
                 </property>
             </activation>
             <properties>
+                <!-- Prevent doing the annotation processing during compilation, because compiled classes are not available yet -->
+                <extensionsAnnotationProcessorCompileProc>none</extensionsAnnotationProcessorCompileProc>
                 <extensionsAnnotationProcessor>org.mule.runtime.module.extension.api.resources.ExtensionResourcesGeneratorAnnotationProcessor</extensionsAnnotationProcessor>
-                <apt.phase>compile</apt.phase>
             </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <executions>
+                                <!-- Do just the annotation processing part, but with access to the compiled classes -->
+                                <execution>
+                                    <phase>compile</phase>
+                                    <id>post-compile-annotaiton-processing</id>
+                                    <goals>
+                                        <goal>compile</goal>
+                                    </goals>
+                                    <configuration>
+                                        <proc>only</proc>
+                                        <compilerArgs combine.children="append">
+                                            <arg>-Aextension.classes=${project.build.outputDirectory}</arg>
+                                        </compilerArgs>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
         </profile>
         <profile>
             <id>java8</id>
