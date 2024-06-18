@@ -427,7 +427,6 @@
                         <compilerArgs>
                             <arg>-Aextension.version=${project.version}</arg>
                             <arg>-Aextension.resources=${project.build.resources[0].directory}</arg>
-<!--                            <arg>-Aextension.classes=${project.build.outputDirectory}</arg>-->
                             <arg>-AexportedPackagesValidator.skip=${exportedPackagesValidator.skip}</arg>
                             <arg>-AexportedPackagesValidator.strictValidation=${exportedPackagesValidator.strictValidation}</arg>
                         </compilerArgs>
