@@ -108,7 +108,7 @@
 
     <properties>
         <mule.version>4.8.0-SNAPSHOT</mule.version>
-        <mule.weave.version>2.8.0-SNAPSHOT</mule.weave.version>
+        <mule.weave.version>2.8.0-20240729</mule.weave.version>
         <mule.sdk.version>1.8.0-SNAPSHOT</mule.sdk.version>
         <mule.sdk.api.version>0.10.0-SNAPSHOT</mule.sdk.api.version>
         <mule.api.version>1.8.0-SNAPSHOT</mule.api.version>
