@@ -108,7 +108,7 @@
 
     <properties>
         <apt.phase>process-sources</apt.phase>
-        <mule.version>4.6.6-rc2</mule.version>
+        <mule.version>4.6.6</mule.version>
         <mule.weave.version>2.6.6</mule.weave.version>
         <mule.sdk.version>1.6.6</mule.sdk.version>
         <mule.sdk.api.version>0.8.6</mule.sdk.api.version>
