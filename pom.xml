@@ -109,7 +109,7 @@
     <properties>
         <mule.version>4.9.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.9.0-20240821</mule.weave.version>
-        <mule.sdk.version>1.9.0-SNAPSHOT</mule.sdk.version>
+        <mule.sdk.version>1.9.0-20240821</mule.sdk.version>
         <mule.sdk.api.version>0.11.0-20240821</mule.sdk.api.version>
         <mule.api.version>1.9.0-20240821</mule.api.version>
         <mule.metadata.version>1.9.0-SNAPSHOT</mule.metadata.version>
