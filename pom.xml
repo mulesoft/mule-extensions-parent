@@ -232,13 +232,6 @@
                 <artifactId>mule-dwb-api</artifactId>
                 <version>${mule.weave.version}</version>
             </dependency>
-    
-            <!-- Java 11 Support-->
-            <dependency>
-                <groupId>org.mule.runtime</groupId>
-                <artifactId>mule-module-javaee</artifactId>
-                <version>${mule.version}</version>
-            </dependency>
 
             <!--Test Dependencies-->
             <dependency>
@@ -338,13 +331,6 @@
         <dependency>
             <groupId>org.mule.runtime</groupId>
             <artifactId>mule-dwb-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Java 11 Support-->
-        <dependency>
-            <groupId>org.mule.runtime</groupId>
-            <artifactId>mule-module-javaee</artifactId>
             <scope>provided</scope>
         </dependency>
 
