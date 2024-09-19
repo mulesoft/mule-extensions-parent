@@ -110,7 +110,7 @@
         <mule.version>4.9.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.9.0-20240919</mule.weave.version>
         <mule.sdk.version>1.9.0-SNAPSHOT</mule.sdk.version>
-        <mule.sdk.api.version>0.11.0-SNAPSHOT</mule.sdk.api.version>
+        <mule.sdk.api.version>0.11.0-20240919</mule.sdk.api.version>
         <mule.api.version>1.9.0-20240919</mule.api.version>
         <mule.metadata.version>1.9.0-SNAPSHOT</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.8.0-SNAPSHOT</mule.extensions.ast.loader.version>
