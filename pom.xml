@@ -107,7 +107,7 @@
     </scm>
 
     <properties>
-        <mule.version>4.8.0-SNAPSHOT</mule.version>
+        <mule.version>4.8.1-SNAPSHOT</mule.version>
         <mule.weave.version>2.8.1-SNAPSHOT</mule.weave.version>
         <mule.sdk.version>1.8.1-SNAPSHOT</mule.sdk.version>
         <mule.sdk.api.version>0.10.3-SNAPSHOT</mule.sdk.api.version>
