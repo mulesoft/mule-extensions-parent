@@ -110,7 +110,7 @@
         <mule.version>4.8.0-rc2</mule.version>
         <mule.weave.version>2.8.0-rc2</mule.weave.version>
         <mule.sdk.version>1.8.0-rc2</mule.sdk.version>
-        <mule.sdk.api.version>0.10.2-rc2</mule.sdk.api.version>
+        <mule.sdk.api.version>0.10.2-rc3</mule.sdk.api.version>
         <mule.sdk.compatibility.api.version>0.10.2-rc2</mule.sdk.compatibility.api.version>
         <mule.api.version>1.8.0-rc3</mule.api.version>
         <mule.metadata.version>1.8.0-rc2</mule.metadata.version>
