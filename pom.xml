@@ -109,7 +109,7 @@
     <properties>
         <apt.phase>process-sources</apt.phase>
         <mule.version>4.7.4-rc1</mule.version>
-        <mule.weave.version>2.7.4-rc1</mule.weave.version>
+        <mule.weave.version>2.7.4-rc2</mule.weave.version>
         <mule.sdk.version>1.7.4-rc1</mule.sdk.version>
         <mule.sdk.api.version>0.10.0</mule.sdk.api.version>
         <mule.api.version>1.7.4-rc1</mule.api.version>
