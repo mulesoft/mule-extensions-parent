@@ -117,10 +117,6 @@
         <mule.extensions.maven.plugin.version>1.9.0-SNAPSHOT</mule.extensions.maven.plugin.version>
         <mule.app.plugins.maven.plugin.version>1.9.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
-        <guava.version>25.1-jre</guava.version>
-        <cglib.version>3.2.10</cglib.version>
-        <xmlApisVersion>1.4.01</xmlApisVersion>
-
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <java.release.version>17</java.release.version>
         <maven.compiler.release>${java.release.version}</maven.compiler.release>
@@ -130,11 +126,10 @@
         <extensionsAnnotationProcessor>
             org.mule.runtime.ast.extension.api.loader.ASTExtensionResourcesGeneratorAnnotationProcessor
         </extensionsAnnotationProcessor>
-        <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
-        <java.xml.bind.version>2.3.8</java.xml.bind.version>
-        <javax.activation.version>1.2.1</javax.activation.version>
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
+        
+        <log4jVersion>2.24.1</log4jVersion>
         
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
@@ -211,6 +206,12 @@
                 <artifactId>mule-module-spring-config</artifactId>
                 <version>${mule.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <!-- Override log4j dependency that comes trnasitive from metadata-mdel-xml -> xmlbeans -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4jVersion}</version>
             </dependency>
     
             <!--Mule Services-->
