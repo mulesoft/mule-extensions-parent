@@ -122,8 +122,8 @@
         <xmlApisVersion>1.4.01</xmlApisVersion>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-        <jdk.version>1.8</jdk.version>
-        <java.release.version>8</java.release.version>
+        <java.release.version>17</java.release.version>
+        <maven.compiler.release>${java.release.version}</maven.compiler.release>
         <maven.build.timestamp.format>yyyy-MM-dd-HH:mm:ss</maven.build.timestamp.format>
         
         <extensionsAnnotationProcessorCompileProc></extensionsAnnotationProcessorCompileProc>
@@ -385,8 +385,6 @@
                     <version>${maven.compiler.plugin.version}</version>
                     <configuration>
                         <encoding>ISO-8859-1</encoding>
-                        <source>${jdk.version}</source>
-                        <target>${jdk.version}</target>
                         <release>${java.release.version}</release>
                         <proc>${extensionsAnnotationProcessorCompileProc}</proc>
                         <parameters>true</parameters>
@@ -535,8 +533,9 @@
                         </manifest>
                         <manifestEntries>
                             <Build-Date>${maven.build.timestamp}</Build-Date>
+                            <!-- Custom Entries -->
+                            <Target-Java-Release-Version>${java.release.version}</Target-Java-Release-Version>
                         </manifestEntries>
-                        <!-- Custom Entries -->
                     </archive>
                 </configuration>
             </plugin>
