@@ -137,6 +137,8 @@
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
         
+        <log4jVersion>2.24.1</log4jVersion>
+        
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
         <munit.extensions.maven.plugin.version>1.4.0-SNAPSHOT</munit.extensions.maven.plugin.version>
@@ -212,6 +214,12 @@
                 <artifactId>mule-module-spring-config</artifactId>
                 <version>${mule.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <!-- Override log4j dependency that comes trnasitive from metadata-mdel-xml -> xmlbeans -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4jVersion}</version>
             </dependency>
     
             <!--Mule Services-->
