@@ -215,7 +215,7 @@
                 <version>${mule.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <!-- Override log4j dependency that comes trnasitive from metadata-mdel-xml -> xmlbeans -->
+            <!-- Override log4j dependency that comes transitive from metadata-model-xml -> xmlbeans -->
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
@@ -228,6 +228,12 @@
                 <groupId>org.mule.runtime</groupId>
                 <artifactId>mule-module-service</artifactId>
                 <version>${mule.version}</version>
+            </dependency>
+            <!-- Override log4j dependency that comes transitive from mule-classloader-model -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4jVersion}</version>
             </dependency>
             <!--TODO - MULE-11030 : Add DW plugin dependency to the test runner directly -->
             <dependency>
