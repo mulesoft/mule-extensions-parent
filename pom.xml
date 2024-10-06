@@ -7,7 +7,7 @@
 
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-modules-parent</artifactId>
-    <version>1.8.1-SNAPSHOT</version>
+    <version>1.8.1-rc1</version>
     <packaging>pom</packaging>
 
     <name>Mule Modules Parent POM</name>
