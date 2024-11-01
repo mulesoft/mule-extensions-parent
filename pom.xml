@@ -111,7 +111,7 @@
         <mule.weave.version>2.8.1</mule.weave.version>
         <mule.sdk.version>1.8.1-rc1</mule.sdk.version>
         <mule.sdk.api.version>0.10.3</mule.sdk.api.version>
-        <mule.sdk.compatibility.api.version>0.10.3-rc1</mule.sdk.compatibility.api.version>
+        <mule.sdk.compatibility.api.version>0.10.3</mule.sdk.compatibility.api.version>
         <mule.api.version>1.8.1</mule.api.version>
         <mule.metadata.version>1.8.1-rc1</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.7.1-rc1</mule.extensions.ast.loader.version>
