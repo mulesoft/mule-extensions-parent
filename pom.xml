@@ -400,11 +400,6 @@
                                 <artifactId>mule-module-extensions-spring-support</artifactId>
                                 <version>${mule.version}</version>
                             </path>
-                            <path>
-                                <groupId>org.mule.runtime</groupId>
-                                <artifactId>mule-module-extensions-soap-support</artifactId>
-                                <version>${mule.version}</version>
-                            </path>
                         </annotationProcessorPaths>
                         <annotationProcessors>
                             <annotationProcessors>${extensionsAnnotationProcessor}</annotationProcessors>
