@@ -154,6 +154,32 @@
         <license.maven.plugin.version>4.3</license.maven.plugin.version>
         <licensePath>LICENSE_HEADER_CPAL.txt</licensePath>
         <licenseYear>2023</licenseYear>
+        
+        <surefire.args.base/>
+        <!-- Default configuration for running tests extending MuleArtifactFunctionalTestCase -->
+        <surefire.test.unit.open.args.target>org.mule.runtime.jpms.utils</surefire.test.unit.open.args.target>
+        <surefire.test.unit.open.args>
+            --add-opens=java.base/java.lang=${surefire.test.unit.open.args.target}
+            --add-opens=java.base/java.lang.reflect=${surefire.test.unit.open.args.target}
+            --add-opens=java.base/java.lang.invoke=${surefire.test.unit.open.args.target}
+            --add-opens=java.sql/java.sql=${surefire.test.unit.open.args.target}
+            ${surefire.args.base}
+        </surefire.test.unit.open.args>
+        <surefire.module.path>
+            ${org.slf4j:slf4j-api:jar}:${org.mule.runtime.boot:mule-module-jpms-utils:jar}
+        </surefire.module.path>
+        <surefire.add.modules>
+            org.slf4j,org.mule.runtime.jpms.utils
+        </surefire.add.modules>
+        <surefire.module.args>
+            -XX:+IgnoreUnrecognizedVMOptions
+            --module-path=${surefire.module.path}
+            --add-modules=${surefire.add.modules}
+            ${surefire.test.unit.open.args}
+        </surefire.module.args>
+        <surefire.args>
+            ${surefire.module.args}
+        </surefire.args>
     </properties>
 
     <dependencyManagement>
@@ -371,6 +397,7 @@
                         <systemPropertyVariables>
                             <maven.projectVersion>${mule.version}</maven.projectVersion>
                         </systemPropertyVariables>
+                        <argLine>${surefire.args}</argLine>
                     </configuration>
                     <dependencies>
                         <dependency>
