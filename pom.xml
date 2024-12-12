@@ -7,7 +7,7 @@
 
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-modules-parent</artifactId>
-    <version>1.9.0-SNAPSHOT</version>
+    <version>1.10.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Mule Modules Parent POM</name>
@@ -107,15 +107,15 @@
     </scm>
 
     <properties>
-        <mule.version>4.9.0-SNAPSHOT</mule.version>
+        <mule.version>4.10.0-SNAPSHOT</mule.version>
         <mule.weave.version>2.10.0-SNAPSHOT</mule.weave.version>
-        <mule.sdk.version>1.9.0-SNAPSHOT</mule.sdk.version>
-        <mule.sdk.api.version>0.11.0-SNAPSHOT</mule.sdk.api.version>
-        <mule.api.version>1.9.0-SNAPSHOT</mule.api.version>
-        <mule.metadata.version>1.9.0-SNAPSHOT</mule.metadata.version>
-        <mule.extensions.ast.loader.version>1.8.0-SNAPSHOT</mule.extensions.ast.loader.version>
-        <mule.extensions.maven.plugin.version>1.9.0-SNAPSHOT</mule.extensions.maven.plugin.version>
-        <mule.app.plugins.maven.plugin.version>1.9.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
+        <mule.sdk.version>1.10.0-SNAPSHOT</mule.sdk.version>
+        <mule.sdk.api.version>0.12.0-SNAPSHOT</mule.sdk.api.version>
+        <mule.api.version>1.10.0-SNAPSHOT</mule.api.version>
+        <mule.metadata.version>1.10.0-SNAPSHOT</mule.metadata.version>
+        <mule.extensions.ast.loader.version>1.9.0-SNAPSHOT</mule.extensions.ast.loader.version>
+        <mule.extensions.maven.plugin.version>1.10.0-SNAPSHOT</mule.extensions.maven.plugin.version>
+        <mule.app.plugins.maven.plugin.version>1.10.0-SNAPSHOT</mule.app.plugins.maven.plugin.version>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <java.release.version>17</java.release.version>
@@ -134,7 +134,7 @@
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
         <munit.extensions.maven.plugin.version>1.4.0</munit.extensions.maven.plugin.version>
-        <munit.version>3.3.0</munit.version>
+        <munit.version>3.4.0-SNAPSHOT</munit.version>
 
         <skipJavaTests>${skipTests}</skipJavaTests>
 
