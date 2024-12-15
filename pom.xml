@@ -129,7 +129,7 @@
         <exportedPackagesValidator.skip>false</exportedPackagesValidator.skip>
         <exportedPackagesValidator.strictValidation>false</exportedPackagesValidator.strictValidation>
         
-        <log4jVersion>2.24.1</log4jVersion>
+        <log4jVersion>2.24.3</log4jVersion>
         
         <munit.input.directory>src/test/munit</munit.input.directory>
         <munit.output.directory>${basedir}/target/test-mule/munit</munit.output.directory>
