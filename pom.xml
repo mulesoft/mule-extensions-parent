@@ -431,6 +431,7 @@
                         <annotationProcessors>
                             <annotationProcessors>${extensionsAnnotationProcessor}</annotationProcessors>
                         </annotationProcessors>
+                        <generatedSourcesDirectory>${project.build.outputDirectory}/META-INF</generatedSourcesDirectory>
                         <compilerArgs>
                             <arg>-Aextension.version=${project.version}</arg>
                             <arg>-Aextension.resources=${project.build.resources[0].directory}</arg>
