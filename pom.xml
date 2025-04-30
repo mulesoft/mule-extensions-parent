@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <name>Mule Modules Parent POM</name>
-    <description>Mule modules that augment the core Mule functionality through the Mule Extension API</description>
+    <description>Mule modules that augment the core Mule functionality through the Mule Extension API. this is a test.</description>
     <url>https://github.com/mulesoft/mule-extensions-parent</url>
 
     <organization>
