@@ -108,7 +108,7 @@
 
     <properties>
         <mule.version>4.9.6-rc3</mule.version>
-        <mule.weave.version>2.9.4-rc2</mule.weave.version>
+        <mule.weave.version>2.9.4</mule.weave.version>
         <mule.sdk.version>1.9.6-rc3</mule.sdk.version>
         <mule.sdk.api.version>0.11.6-rc3</mule.sdk.api.version>
         <mule.api.version>1.9.6-rc3</mule.api.version>
