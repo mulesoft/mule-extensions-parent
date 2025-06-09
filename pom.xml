@@ -7,7 +7,7 @@
 
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-modules-parent</artifactId>
-    <version>1.9.6</version>
+    <version>1.9.6-WITH-W-18622349</version>
     <packaging>pom</packaging>
 
     <name>Mule Modules Parent POM</name>
