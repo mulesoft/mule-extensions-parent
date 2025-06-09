@@ -110,7 +110,7 @@
         <mule.version>4.9.6</mule.version>
         <mule.weave.version>2.9.4</mule.weave.version>
         <mule.sdk.version>1.9.6</mule.sdk.version>
-        <mule.sdk.api.version>0.11.6</mule.sdk.api.version>
+        <mule.sdk.api.version>0.11.6-WITH-W-18622349</mule.sdk.api.version>
         <mule.api.version>1.9.6-WITH-W-18622349</mule.api.version>
         <mule.metadata.version>1.9.6</mule.metadata.version>
         <mule.extensions.ast.loader.version>1.8.6</mule.extensions.ast.loader.version>
